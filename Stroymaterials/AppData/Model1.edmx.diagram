@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0779bad227f643a28f7fb0acaa2b139e" Name="Diagram1" ZoomLevel="106">
+        <EntityTypeShape EntityType="Model.Category_Stroy" Width="1.5" PointX="5.875" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Check_Stroy" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Maker_Stroy" Width="1.5" PointX="5.875" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Material_Stroy" Width="1.5" PointX="7.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Order_Stroy" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Pointup_Stroy" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Provider_Stroy" Width="1.5" PointX="5.875" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Role_Stroy" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.User_Stroy" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK_Material_Stroy_Category_Stroy" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Order_Stroy_Check_Stroy" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Material_Stroy_Maker_Stroy" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Material_Stroy_Provider_Stroy" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Order_Stroy_Pointup_Stroy" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Order_Stroy_User_Stroy" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_User_Stroy_Role_Stroy" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

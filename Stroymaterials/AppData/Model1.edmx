@@ -1,0 +1,560 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Category_Stroy">
+          <Key>
+            <PropertyRef Name="id_category" />
+          </Key>
+          <Property Name="id_category" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="category_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Check_Stroy">
+          <Key>
+            <PropertyRef Name="id_check" />
+          </Key>
+          <Property Name="id_check" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="check_material" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="check_count" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Maker_Stroy">
+          <Key>
+            <PropertyRef Name="id_maker" />
+          </Key>
+          <Property Name="id_maker" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="maker_namne" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Material_Stroy">
+          <Key>
+            <PropertyRef Name="id_material" />
+          </Key>
+          <Property Name="id_material" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="material_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="material_units" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="material_count" Type="int" Nullable="false" />
+          <Property Name="material_category" Type="int" Nullable="false" />
+          <Property Name="material_price" Type="int" Nullable="false" />
+          <Property Name="material_provider" Type="int" Nullable="false" />
+          <Property Name="material_maker" Type="int" Nullable="false" />
+          <Property Name="material_description" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="material_available" Type="int" Nullable="false" />
+          <Property Name="material_photo" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Order_Stroy">
+          <Key>
+            <PropertyRef Name="id_order" />
+          </Key>
+          <Property Name="id_order" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="order_pointup" Type="int" Nullable="false" />
+          <Property Name="order_user" Type="int" Nullable="false" />
+          <Property Name="order_check" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Pointup_Stroy">
+          <Key>
+            <PropertyRef Name="id_pointup" />
+          </Key>
+          <Property Name="id_pointup" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="pointup_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Provider_Stroy">
+          <Key>
+            <PropertyRef Name="id_provider" />
+          </Key>
+          <Property Name="id_provider" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="provider_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Role_Stroy">
+          <Key>
+            <PropertyRef Name="id_role" />
+          </Key>
+          <Property Name="id_role" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="roles_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User_Stroy">
+          <Key>
+            <PropertyRef Name="id_user" />
+          </Key>
+          <Property Name="id_user" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_role" Type="int" Nullable="false" />
+          <Property Name="user_firstname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="user_middlename" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="user_lastname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="user_phone" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="user_datebirth" Type="date" Nullable="false" />
+          <Property Name="user_mail" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="user_login" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="user_password" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Material_Stroy_Category_Stroy">
+          <End Role="Category_Stroy" Type="Self.Category_Stroy" Multiplicity="1" />
+          <End Role="Material_Stroy" Type="Self.Material_Stroy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category_Stroy">
+              <PropertyRef Name="id_category" />
+            </Principal>
+            <Dependent Role="Material_Stroy">
+              <PropertyRef Name="material_category" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Material_Stroy_Maker_Stroy">
+          <End Role="Maker_Stroy" Type="Self.Maker_Stroy" Multiplicity="1" />
+          <End Role="Material_Stroy" Type="Self.Material_Stroy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Maker_Stroy">
+              <PropertyRef Name="id_maker" />
+            </Principal>
+            <Dependent Role="Material_Stroy">
+              <PropertyRef Name="material_maker" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Material_Stroy_Provider_Stroy">
+          <End Role="Provider_Stroy" Type="Self.Provider_Stroy" Multiplicity="1" />
+          <End Role="Material_Stroy" Type="Self.Material_Stroy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Provider_Stroy">
+              <PropertyRef Name="id_provider" />
+            </Principal>
+            <Dependent Role="Material_Stroy">
+              <PropertyRef Name="material_provider" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_Stroy_Check_Stroy">
+          <End Role="Check_Stroy" Type="Self.Check_Stroy" Multiplicity="1" />
+          <End Role="Order_Stroy" Type="Self.Order_Stroy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Check_Stroy">
+              <PropertyRef Name="id_check" />
+            </Principal>
+            <Dependent Role="Order_Stroy">
+              <PropertyRef Name="order_check" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_Stroy_Pointup_Stroy">
+          <End Role="Pointup_Stroy" Type="Self.Pointup_Stroy" Multiplicity="1" />
+          <End Role="Order_Stroy" Type="Self.Order_Stroy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pointup_Stroy">
+              <PropertyRef Name="id_pointup" />
+            </Principal>
+            <Dependent Role="Order_Stroy">
+              <PropertyRef Name="order_pointup" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_Stroy_User_Stroy">
+          <End Role="User_Stroy" Type="Self.User_Stroy" Multiplicity="1" />
+          <End Role="Order_Stroy" Type="Self.Order_Stroy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_Stroy">
+              <PropertyRef Name="id_user" />
+            </Principal>
+            <Dependent Role="Order_Stroy">
+              <PropertyRef Name="order_user" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Stroy_Role_Stroy">
+          <End Role="Role_Stroy" Type="Self.Role_Stroy" Multiplicity="1" />
+          <End Role="User_Stroy" Type="Self.User_Stroy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role_Stroy">
+              <PropertyRef Name="id_role" />
+            </Principal>
+            <Dependent Role="User_Stroy">
+              <PropertyRef Name="user_role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище ModelContainer">
+          <EntitySet Name="Category_Stroy" EntityType="Self.Category_Stroy" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Check_Stroy" EntityType="Self.Check_Stroy" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Maker_Stroy" EntityType="Self.Maker_Stroy" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Material_Stroy" EntityType="Self.Material_Stroy" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Order_Stroy" EntityType="Self.Order_Stroy" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pointup_Stroy" EntityType="Self.Pointup_Stroy" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Provider_Stroy" EntityType="Self.Provider_Stroy" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Role_Stroy" EntityType="Self.Role_Stroy" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User_Stroy" EntityType="Self.User_Stroy" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Material_Stroy_Category_Stroy" Association="Self.FK_Material_Stroy_Category_Stroy">
+            <End Role="Category_Stroy" EntitySet="Category_Stroy" />
+            <End Role="Material_Stroy" EntitySet="Material_Stroy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Material_Stroy_Maker_Stroy" Association="Self.FK_Material_Stroy_Maker_Stroy">
+            <End Role="Maker_Stroy" EntitySet="Maker_Stroy" />
+            <End Role="Material_Stroy" EntitySet="Material_Stroy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Material_Stroy_Provider_Stroy" Association="Self.FK_Material_Stroy_Provider_Stroy">
+            <End Role="Provider_Stroy" EntitySet="Provider_Stroy" />
+            <End Role="Material_Stroy" EntitySet="Material_Stroy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Stroy_Check_Stroy" Association="Self.FK_Order_Stroy_Check_Stroy">
+            <End Role="Check_Stroy" EntitySet="Check_Stroy" />
+            <End Role="Order_Stroy" EntitySet="Order_Stroy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Stroy_Pointup_Stroy" Association="Self.FK_Order_Stroy_Pointup_Stroy">
+            <End Role="Pointup_Stroy" EntitySet="Pointup_Stroy" />
+            <End Role="Order_Stroy" EntitySet="Order_Stroy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Stroy_User_Stroy" Association="Self.FK_Order_Stroy_User_Stroy">
+            <End Role="User_Stroy" EntitySet="User_Stroy" />
+            <End Role="Order_Stroy" EntitySet="Order_Stroy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Stroy_Role_Stroy" Association="Self.FK_User_Stroy_Role_Stroy">
+            <End Role="Role_Stroy" EntitySet="Role_Stroy" />
+            <End Role="User_Stroy" EntitySet="User_Stroy" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Category_Stroy">
+          <Key>
+            <PropertyRef Name="id_category" />
+          </Key>
+          <Property Name="id_category" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="category_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Material_Stroy" Relationship="Self.FK_Material_Stroy_Category_Stroy" FromRole="Category_Stroy" ToRole="Material_Stroy" />
+        </EntityType>
+        <EntityType Name="Check_Stroy">
+          <Key>
+            <PropertyRef Name="id_check" />
+          </Key>
+          <Property Name="id_check" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="check_material" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="check_count" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Order_Stroy" Relationship="Self.FK_Order_Stroy_Check_Stroy" FromRole="Check_Stroy" ToRole="Order_Stroy" />
+        </EntityType>
+        <EntityType Name="Maker_Stroy">
+          <Key>
+            <PropertyRef Name="id_maker" />
+          </Key>
+          <Property Name="id_maker" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="maker_namne" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Material_Stroy" Relationship="Self.FK_Material_Stroy_Maker_Stroy" FromRole="Maker_Stroy" ToRole="Material_Stroy" />
+        </EntityType>
+        <EntityType Name="Material_Stroy">
+          <Key>
+            <PropertyRef Name="id_material" />
+          </Key>
+          <Property Name="id_material" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="material_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="material_units" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="material_count" Type="Int32" Nullable="false" />
+          <Property Name="material_category" Type="Int32" Nullable="false" />
+          <Property Name="material_price" Type="Int32" Nullable="false" />
+          <Property Name="material_provider" Type="Int32" Nullable="false" />
+          <Property Name="material_maker" Type="Int32" Nullable="false" />
+          <Property Name="material_description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="material_available" Type="Int32" Nullable="false" />
+          <Property Name="material_photo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Category_Stroy" Relationship="Self.FK_Material_Stroy_Category_Stroy" FromRole="Material_Stroy" ToRole="Category_Stroy" />
+          <NavigationProperty Name="Maker_Stroy" Relationship="Self.FK_Material_Stroy_Maker_Stroy" FromRole="Material_Stroy" ToRole="Maker_Stroy" />
+          <NavigationProperty Name="Provider_Stroy" Relationship="Self.FK_Material_Stroy_Provider_Stroy" FromRole="Material_Stroy" ToRole="Provider_Stroy" />
+        </EntityType>
+        <EntityType Name="Order_Stroy">
+          <Key>
+            <PropertyRef Name="id_order" />
+          </Key>
+          <Property Name="id_order" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="order_pointup" Type="Int32" Nullable="false" />
+          <Property Name="order_user" Type="Int32" Nullable="false" />
+          <Property Name="order_check" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Check_Stroy" Relationship="Self.FK_Order_Stroy_Check_Stroy" FromRole="Order_Stroy" ToRole="Check_Stroy" />
+          <NavigationProperty Name="Pointup_Stroy" Relationship="Self.FK_Order_Stroy_Pointup_Stroy" FromRole="Order_Stroy" ToRole="Pointup_Stroy" />
+          <NavigationProperty Name="User_Stroy" Relationship="Self.FK_Order_Stroy_User_Stroy" FromRole="Order_Stroy" ToRole="User_Stroy" />
+        </EntityType>
+        <EntityType Name="Pointup_Stroy">
+          <Key>
+            <PropertyRef Name="id_pointup" />
+          </Key>
+          <Property Name="id_pointup" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pointup_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Order_Stroy" Relationship="Self.FK_Order_Stroy_Pointup_Stroy" FromRole="Pointup_Stroy" ToRole="Order_Stroy" />
+        </EntityType>
+        <EntityType Name="Provider_Stroy">
+          <Key>
+            <PropertyRef Name="id_provider" />
+          </Key>
+          <Property Name="id_provider" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="provider_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Material_Stroy" Relationship="Self.FK_Material_Stroy_Provider_Stroy" FromRole="Provider_Stroy" ToRole="Material_Stroy" />
+        </EntityType>
+        <EntityType Name="Role_Stroy">
+          <Key>
+            <PropertyRef Name="id_role" />
+          </Key>
+          <Property Name="id_role" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="roles_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="User_Stroy" Relationship="Self.FK_User_Stroy_Role_Stroy" FromRole="Role_Stroy" ToRole="User_Stroy" />
+        </EntityType>
+        <EntityType Name="User_Stroy">
+          <Key>
+            <PropertyRef Name="id_user" />
+          </Key>
+          <Property Name="id_user" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_role" Type="Int32" Nullable="false" />
+          <Property Name="user_firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="user_middlename" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="user_lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="user_phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="user_datebirth" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="user_mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="user_login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="user_password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Order_Stroy" Relationship="Self.FK_Order_Stroy_User_Stroy" FromRole="User_Stroy" ToRole="Order_Stroy" />
+          <NavigationProperty Name="Role_Stroy" Relationship="Self.FK_User_Stroy_Role_Stroy" FromRole="User_Stroy" ToRole="Role_Stroy" />
+        </EntityType>
+        <Association Name="FK_Material_Stroy_Category_Stroy">
+          <End Role="Category_Stroy" Type="Self.Category_Stroy" Multiplicity="1" />
+          <End Role="Material_Stroy" Type="Self.Material_Stroy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category_Stroy">
+              <PropertyRef Name="id_category" />
+            </Principal>
+            <Dependent Role="Material_Stroy">
+              <PropertyRef Name="material_category" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_Stroy_Check_Stroy">
+          <End Role="Check_Stroy" Type="Self.Check_Stroy" Multiplicity="1" />
+          <End Role="Order_Stroy" Type="Self.Order_Stroy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Check_Stroy">
+              <PropertyRef Name="id_check" />
+            </Principal>
+            <Dependent Role="Order_Stroy">
+              <PropertyRef Name="order_check" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Material_Stroy_Maker_Stroy">
+          <End Role="Maker_Stroy" Type="Self.Maker_Stroy" Multiplicity="1" />
+          <End Role="Material_Stroy" Type="Self.Material_Stroy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Maker_Stroy">
+              <PropertyRef Name="id_maker" />
+            </Principal>
+            <Dependent Role="Material_Stroy">
+              <PropertyRef Name="material_maker" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Material_Stroy_Provider_Stroy">
+          <End Role="Provider_Stroy" Type="Self.Provider_Stroy" Multiplicity="1" />
+          <End Role="Material_Stroy" Type="Self.Material_Stroy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Provider_Stroy">
+              <PropertyRef Name="id_provider" />
+            </Principal>
+            <Dependent Role="Material_Stroy">
+              <PropertyRef Name="material_provider" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_Stroy_Pointup_Stroy">
+          <End Role="Pointup_Stroy" Type="Self.Pointup_Stroy" Multiplicity="1" />
+          <End Role="Order_Stroy" Type="Self.Order_Stroy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pointup_Stroy">
+              <PropertyRef Name="id_pointup" />
+            </Principal>
+            <Dependent Role="Order_Stroy">
+              <PropertyRef Name="order_pointup" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_Stroy_User_Stroy">
+          <End Role="User_Stroy" Type="Self.User_Stroy" Multiplicity="1" />
+          <End Role="Order_Stroy" Type="Self.Order_Stroy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User_Stroy">
+              <PropertyRef Name="id_user" />
+            </Principal>
+            <Dependent Role="Order_Stroy">
+              <PropertyRef Name="order_user" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Stroy_Role_Stroy">
+          <End Role="Role_Stroy" Type="Self.Role_Stroy" Multiplicity="1" />
+          <End Role="User_Stroy" Type="Self.User_Stroy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role_Stroy">
+              <PropertyRef Name="id_role" />
+            </Principal>
+            <Dependent Role="User_Stroy">
+              <PropertyRef Name="user_role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Category_Stroy" EntityType="Self.Category_Stroy" />
+          <EntitySet Name="Check_Stroy" EntityType="Self.Check_Stroy" />
+          <EntitySet Name="Maker_Stroy" EntityType="Self.Maker_Stroy" />
+          <EntitySet Name="Material_Stroy" EntityType="Self.Material_Stroy" />
+          <EntitySet Name="Order_Stroy" EntityType="Self.Order_Stroy" />
+          <EntitySet Name="Pointup_Stroy" EntityType="Self.Pointup_Stroy" />
+          <EntitySet Name="Provider_Stroy" EntityType="Self.Provider_Stroy" />
+          <EntitySet Name="Role_Stroy" EntityType="Self.Role_Stroy" />
+          <EntitySet Name="User_Stroy" EntityType="Self.User_Stroy" />
+          <AssociationSet Name="FK_Material_Stroy_Category_Stroy" Association="Self.FK_Material_Stroy_Category_Stroy">
+            <End Role="Category_Stroy" EntitySet="Category_Stroy" />
+            <End Role="Material_Stroy" EntitySet="Material_Stroy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Stroy_Check_Stroy" Association="Self.FK_Order_Stroy_Check_Stroy">
+            <End Role="Check_Stroy" EntitySet="Check_Stroy" />
+            <End Role="Order_Stroy" EntitySet="Order_Stroy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Material_Stroy_Maker_Stroy" Association="Self.FK_Material_Stroy_Maker_Stroy">
+            <End Role="Maker_Stroy" EntitySet="Maker_Stroy" />
+            <End Role="Material_Stroy" EntitySet="Material_Stroy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Material_Stroy_Provider_Stroy" Association="Self.FK_Material_Stroy_Provider_Stroy">
+            <End Role="Provider_Stroy" EntitySet="Provider_Stroy" />
+            <End Role="Material_Stroy" EntitySet="Material_Stroy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Stroy_Pointup_Stroy" Association="Self.FK_Order_Stroy_Pointup_Stroy">
+            <End Role="Pointup_Stroy" EntitySet="Pointup_Stroy" />
+            <End Role="Order_Stroy" EntitySet="Order_Stroy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Stroy_User_Stroy" Association="Self.FK_Order_Stroy_User_Stroy">
+            <End Role="User_Stroy" EntitySet="User_Stroy" />
+            <End Role="Order_Stroy" EntitySet="Order_Stroy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Stroy_Role_Stroy" Association="Self.FK_User_Stroy_Role_Stroy">
+            <End Role="Role_Stroy" EntitySet="Role_Stroy" />
+            <End Role="User_Stroy" EntitySet="User_Stroy" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище ModelContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="Category_Stroy">
+            <EntityTypeMapping TypeName="Model.Category_Stroy">
+              <MappingFragment StoreEntitySet="Category_Stroy">
+                <ScalarProperty Name="id_category" ColumnName="id_category" />
+                <ScalarProperty Name="category_name" ColumnName="category_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Check_Stroy">
+            <EntityTypeMapping TypeName="Model.Check_Stroy">
+              <MappingFragment StoreEntitySet="Check_Stroy">
+                <ScalarProperty Name="id_check" ColumnName="id_check" />
+                <ScalarProperty Name="check_material" ColumnName="check_material" />
+                <ScalarProperty Name="check_count" ColumnName="check_count" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Maker_Stroy">
+            <EntityTypeMapping TypeName="Model.Maker_Stroy">
+              <MappingFragment StoreEntitySet="Maker_Stroy">
+                <ScalarProperty Name="id_maker" ColumnName="id_maker" />
+                <ScalarProperty Name="maker_namne" ColumnName="maker_namne" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Material_Stroy">
+            <EntityTypeMapping TypeName="Model.Material_Stroy">
+              <MappingFragment StoreEntitySet="Material_Stroy">
+                <ScalarProperty Name="id_material" ColumnName="id_material" />
+                <ScalarProperty Name="material_name" ColumnName="material_name" />
+                <ScalarProperty Name="material_units" ColumnName="material_units" />
+                <ScalarProperty Name="material_count" ColumnName="material_count" />
+                <ScalarProperty Name="material_category" ColumnName="material_category" />
+                <ScalarProperty Name="material_price" ColumnName="material_price" />
+                <ScalarProperty Name="material_provider" ColumnName="material_provider" />
+                <ScalarProperty Name="material_maker" ColumnName="material_maker" />
+                <ScalarProperty Name="material_description" ColumnName="material_description" />
+                <ScalarProperty Name="material_available" ColumnName="material_available" />
+                <ScalarProperty Name="material_photo" ColumnName="material_photo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Order_Stroy">
+            <EntityTypeMapping TypeName="Model.Order_Stroy">
+              <MappingFragment StoreEntitySet="Order_Stroy">
+                <ScalarProperty Name="id_order" ColumnName="id_order" />
+                <ScalarProperty Name="order_pointup" ColumnName="order_pointup" />
+                <ScalarProperty Name="order_user" ColumnName="order_user" />
+                <ScalarProperty Name="order_check" ColumnName="order_check" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pointup_Stroy">
+            <EntityTypeMapping TypeName="Model.Pointup_Stroy">
+              <MappingFragment StoreEntitySet="Pointup_Stroy">
+                <ScalarProperty Name="id_pointup" ColumnName="id_pointup" />
+                <ScalarProperty Name="pointup_name" ColumnName="pointup_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Provider_Stroy">
+            <EntityTypeMapping TypeName="Model.Provider_Stroy">
+              <MappingFragment StoreEntitySet="Provider_Stroy">
+                <ScalarProperty Name="id_provider" ColumnName="id_provider" />
+                <ScalarProperty Name="provider_name" ColumnName="provider_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Role_Stroy">
+            <EntityTypeMapping TypeName="Model.Role_Stroy">
+              <MappingFragment StoreEntitySet="Role_Stroy">
+                <ScalarProperty Name="id_role" ColumnName="id_role" />
+                <ScalarProperty Name="roles_name" ColumnName="roles_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User_Stroy">
+            <EntityTypeMapping TypeName="Model.User_Stroy">
+              <MappingFragment StoreEntitySet="User_Stroy">
+                <ScalarProperty Name="id_user" ColumnName="id_user" />
+                <ScalarProperty Name="user_role" ColumnName="user_role" />
+                <ScalarProperty Name="user_firstname" ColumnName="user_firstname" />
+                <ScalarProperty Name="user_middlename" ColumnName="user_middlename" />
+                <ScalarProperty Name="user_lastname" ColumnName="user_lastname" />
+                <ScalarProperty Name="user_phone" ColumnName="user_phone" />
+                <ScalarProperty Name="user_datebirth" ColumnName="user_datebirth" />
+                <ScalarProperty Name="user_mail" ColumnName="user_mail" />
+                <ScalarProperty Name="user_login" ColumnName="user_login" />
+                <ScalarProperty Name="user_password" ColumnName="user_password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

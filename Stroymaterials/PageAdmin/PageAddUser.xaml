@@ -1,0 +1,106 @@
+﻿<Page
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Stroymaterials.PageAdmin"
+      xmlns:AppData="clr-namespace:Stroymaterials.AppData" x:Class="Stroymaterials.PageAdmin.PageAddUser"
+      mc:Ignorable="d" 
+      d:DesignHeight="400" d:DesignWidth="800"
+      Title="PageAddUser">
+    <Page.Resources>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" SnapsToDevicePixels="true" StrokeThickness="1"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" CornerRadius="20" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
+    <Grid x:Name="grid_registration" Height="450" Width="800" Background="#FFA0A0A0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="91*"/>
+            <RowDefinition Height="359*"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="label_role" Content="Label" HorizontalAlignment="Left" Margin="500,323,0,0" VerticalAlignment="Top" Background="#FFCFE6E0" Foreground="#FFCFE6E0" Grid.Row="1"/>
+        <Label x:Name="text_firstname" Content="Введите имя " HorizontalAlignment="Left" Margin="516,61,0,0" VerticalAlignment="Top" FontSize="20" Width="124" Height="37" Grid.RowSpan="2"/>
+        <Label x:Name="text_lastname" Content="Введите фамилию " HorizontalAlignment="Left" Margin="491,30,0,0" VerticalAlignment="Top" FontSize="20" Width="178" Height="36" Grid.Row="1"/>
+        <Label x:Name="text_middlename" Content="Введите отчество" HorizontalAlignment="Left" Margin="493,98,0,0" VerticalAlignment="Top" FontSize="20" Width="170" Height="37" Grid.Row="1"/>
+        <TextBox x:Name="label_firstname" HorizontalAlignment="Left" Height="26" Margin="426,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="306" FontSize="15" SelectionChanged="label_firstname_SelectionChanged" Grid.Row="1"/>
+        <TextBox x:Name="label_lastname" HorizontalAlignment="Left" Height="26" Margin="426,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="308" FontSize="15" Grid.Row="1"/>
+        <TextBox x:Name="label_middlename" HorizontalAlignment="Left" Height="26" Margin="424,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="309" FontSize="15" Grid.Row="1"/>
+        <Label x:Name="text_phone" Content="Введите телефон" HorizontalAlignment="Left" Margin="124,222,0,0" VerticalAlignment="Top" FontSize="20" Width="170" Height="38" Grid.Row="1"/>
+        <TextBox x:Name="label_phone" HorizontalAlignment="Left" Height="28" Margin="59,260,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="310" FontSize="20" Grid.Row="1"/>
+        <Label x:Name="text_datebirth" Content="Введите дату рождения" HorizontalAlignment="Left" Margin="464,0,0,0" VerticalAlignment="Center" FontSize="20" Width="228" Height="36" Grid.Row="1"/>
+        <Label x:Name="text_mail" Content="Введите почту" HorizontalAlignment="Left" Margin="136,157,0,0" VerticalAlignment="Top" FontSize="20" Width="146" Height="40" Grid.Row="1"/>
+        <TextBox x:Name="label_mail" HorizontalAlignment="Left" Height="26" Margin="58,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="309" FontSize="15" RenderTransformOrigin="0.111,1.515" Grid.Row="1"/>
+        <Label x:Name="text_login" Content="Введите логин" HorizontalAlignment="Left" Margin="137,0,0,0" VerticalAlignment="Top" FontSize="20" Width="143" Height="39"/>
+        <TextBox x:Name="label_login" HorizontalAlignment="Left" Height="25" Margin="58,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="309" FontSize="15"/>
+        <Label x:Name="text_password" Content="Введите пароль" HorizontalAlignment="Left" Margin="134,62,0,0" VerticalAlignment="Top" FontSize="20" Width="158" Height="36" Grid.RowSpan="2"/>
+        <PasswordBox x:Name="label_password" HorizontalAlignment="Left" Margin="59,7,0,0" VerticalAlignment="Top" Width="309" Height="26" FontSize="15" Grid.Row="1"/>
+        <PasswordBox x:Name="label_password_rep" HorizontalAlignment="Left" Margin="60,134,0,0" VerticalAlignment="Top" Width="309" Height="26"  FontSize="15" Grid.Row="1"/>
+        <Label x:Name="text_password_rep" Content="Подтвердите пароль" HorizontalAlignment="Left" Margin="106,96,0,0" VerticalAlignment="Top" FontSize="20" Width="206" Height="38" Grid.Row="1"/>
+        <Button  x:Name="button_create" Content="Создать" HorizontalAlignment="Left" Margin="423,239,0,0" VerticalAlignment="Top" Width="138" Height="49" FontSize="20" IsCancel="True" IsDefault="True" Click="button_create_Click" BorderBrush="Black" Background="#FF656565" Foreground="Black" IsEnabled="False" Grid.Row="1"/>
+        <Button  x:Name="button_back" Content="Назад" HorizontalAlignment="Left" Margin="594,239,0,0" VerticalAlignment="Top" Width="138" Height="49" FontSize="20" IsCancel="True" IsDefault="True" Click="button_back_Click" BorderBrush="Black" Background="#FF656565" Foreground="Black" Grid.Row="1"/>
+        <DatePicker x:Name="label_datebirth" HorizontalAlignment="Left" Margin="426,199,0,0" VerticalAlignment="Top" Width="308" Height="27" FontSize="15" SelectedDateChanged="label_datebirth_SelectedDateChanged_1" Grid.Row="1"/>
+
+
+        <ComboBox x:Name="combobox_roles" HorizontalAlignment="Left" Margin="421,34,0,0"  VerticalAlignment="Top" Width="311" FontSize="15" Foreground="#FF4D766B" Height="25">
+            <ComboBox.DataContext>
+                <AppData:Maker/>
+            </ComboBox.DataContext>
+        </ComboBox>
+        <Label x:Name="text_roles" Content="Выберите роль" HorizontalAlignment="Left" Margin="510,0,0,0" VerticalAlignment="Top" FontSize="20" Width="138" Height="34" Foreground="Black"/>
+        <Label x:Name="text_password_warning" Content="" HorizontalAlignment="Left" Margin="60,50,0,0" VerticalAlignment="Top" FontSize="15" Width="307" Height="34" Foreground="#FFA00000" Grid.Row="1"/>
+
+    </Grid>
+</Page>
