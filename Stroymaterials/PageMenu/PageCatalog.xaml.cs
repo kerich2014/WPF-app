@@ -113,7 +113,7 @@ namespace Stroymaterials.PageMenu
 
         private void grid_catalog_Loaded(object sender, RoutedEventArgs e)
         {
-            var CurrentMaterials = Entities7.GetContext().Spare.ToList();
+            var CurrentMaterials = Entities8.GetContext().Spare.ToList();
             listbox_catalog.ItemsSource = CurrentMaterials;
         }
 

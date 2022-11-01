@@ -66,7 +66,7 @@
         </Style>
     </Page.Resources>
 
-    <Grid x:Name="grid_registration" Height="450" Width="800" Background="#FFA0A0A0">
+    <Grid x:Name="grid_registration" Height="450" Width="800" Background="#FF77BDFF">
         <Grid.RowDefinitions>
             <RowDefinition Height="91*"/>
             <RowDefinition Height="359*"/>
@@ -89,8 +89,8 @@
         <PasswordBox x:Name="label_password" HorizontalAlignment="Left" Margin="59,7,0,0" VerticalAlignment="Top" Width="309" Height="26" FontSize="15" Grid.Row="1"/>
         <PasswordBox x:Name="label_password_rep" HorizontalAlignment="Left" Margin="60,134,0,0" VerticalAlignment="Top" Width="309" Height="26"  FontSize="15" Grid.Row="1"/>
         <Label x:Name="text_password_rep" Content="Подтвердите пароль" HorizontalAlignment="Left" Margin="106,96,0,0" VerticalAlignment="Top" FontSize="20" Width="206" Height="38" Grid.Row="1"/>
-        <Button  x:Name="button_create" Content="Создать" HorizontalAlignment="Left" Margin="423,239,0,0" VerticalAlignment="Top" Width="138" Height="49" FontSize="20" IsCancel="True" IsDefault="True" Click="button_create_Click" BorderBrush="Black" Background="#FF656565" Foreground="Black" IsEnabled="False" Grid.Row="1"/>
-        <Button  x:Name="button_back" Content="Назад" HorizontalAlignment="Left" Margin="594,239,0,0" VerticalAlignment="Top" Width="138" Height="49" FontSize="20" IsCancel="True" IsDefault="True" Click="button_back_Click" BorderBrush="Black" Background="#FF656565" Foreground="Black" Grid.Row="1"/>
+        <Button  x:Name="button_create" Content="Создать" HorizontalAlignment="Left" Margin="423,239,0,0" VerticalAlignment="Top" Width="138" Height="49" FontSize="20" IsCancel="True" IsDefault="True" Click="button_create_Click" BorderBrush="Black" Background="#FF705D9C" Foreground="#CCCCFF" IsEnabled="False" Grid.Row="1"/>
+        <Button  x:Name="button_back" Content="Назад" HorizontalAlignment="Left" Margin="594,239,0,0" VerticalAlignment="Top" Width="138" Height="49" FontSize="20" IsCancel="True" IsDefault="True" Click="button_back_Click" BorderBrush="Black" Background="#FF705D9C" Foreground="#CCCCFF" Grid.Row="1"/>
         <DatePicker x:Name="label_datebirth" HorizontalAlignment="Left" Margin="426,199,0,0" VerticalAlignment="Top" Width="308" Height="27" FontSize="15" SelectedDateChanged="label_datebirth_SelectedDateChanged_1" Grid.Row="1"/>
 
 
@@ -99,7 +99,7 @@
                 <AppData:Maker/>
             </ComboBox.DataContext>
         </ComboBox>
-        <Label x:Name="text_roles" Content="Выберите роль" HorizontalAlignment="Left" Margin="510,0,0,0" VerticalAlignment="Top" FontSize="20" Width="138" Height="34" Foreground="Black"/>
+        <Label x:Name="text_roles" Content="Выберите роль" HorizontalAlignment="Left" Margin="510,0,0,0" VerticalAlignment="Top" FontSize="20" Width="138" Height="34" Foreground="#CCCCFF"/>
         <Label x:Name="text_password_warning" Content="" HorizontalAlignment="Left" Margin="60,50,0,0" VerticalAlignment="Top" FontSize="15" Width="307" Height="34" Foreground="#FFA00000" Grid.Row="1"/>
 
     </Grid>

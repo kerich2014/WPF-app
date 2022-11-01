@@ -121,8 +121,8 @@ namespace Stroymaterials.PageAdmin
 
         private void addUser()
         {
-            Entities7.GetContext().User.Add(newUser);
-            Entities7.GetContext().SaveChanges();
+            Entities8.GetContext().User.Add(newUser);
+            Entities8.GetContext().SaveChanges();
         }
         private void localUpdateUsers(User user)
         {
@@ -145,7 +145,7 @@ namespace Stroymaterials.PageAdmin
         }
         private void updateUsers()
         {
-            User updatedUser = Entities7.GetContext().User.Where(x => x.id_user == updateUser.id_user).SingleOrDefault();
+            User updatedUser = Entities8.GetContext().User.Where(x => x.id_user == updateUser.id_user).SingleOrDefault();
             updatedUser.user_firstname = updateUser.user_firstname;
             updatedUser.user_middlename = updateUser.user_middlename;
             updatedUser.user_lastname = updateUser.user_lastname;

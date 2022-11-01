@@ -31,7 +31,7 @@ namespace Stroymaterials.PageAdmin
             {
                 button_users.Visibility = Visibility.Hidden;
             }
-            listview_materials.ItemsSource = Entities7.GetContext().Spare.ToList();
+            listview_materials.ItemsSource = Entities8.GetContext().Spare.ToList();
         }
 
         private void button_edit_Click(object sender, RoutedEventArgs e)
@@ -56,7 +56,7 @@ namespace Stroymaterials.PageAdmin
                 {
                     AppFrame.frmmain.Navigate(new PageCreateMaterials(materialObj, true, materialObj));
                     //StorymaterialsEntities1.GetContext().Spare.RemoveRange(materialObj2);
-                    Entities7.GetContext().SaveChanges();
+                    Entities8.GetContext().SaveChanges();
 
                 }
                 catch (Exception ex)
@@ -88,11 +88,11 @@ namespace Stroymaterials.PageAdmin
                 var userObj = listview_materials.SelectedItems.Cast<Spare>().ToList();
                 try
                 {
-                    Entities7.GetContext().Spare.RemoveRange(userObj);
-                    Entities7.GetContext().SaveChanges();
+                    Entities8.GetContext().Spare.RemoveRange(userObj);
+                    Entities8.GetContext().SaveChanges();
                     MessageBox.Show("Запчасть успешно удалена!");
 
-                    listview_materials.ItemsSource = Entities7.GetContext().Spare.ToList();
+                    listview_materials.ItemsSource = Entities8.GetContext().Spare.ToList();
                 }
                 catch (Exception ex)
                 {

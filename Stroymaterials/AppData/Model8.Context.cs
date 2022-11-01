@@ -13,19 +13,17 @@ namespace Stroymaterials.AppData
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Entities7 : DbContext
+    public partial class Entities8 : DbContext
     {
-        public Entities7()
-            : base("name=Entities7")
+        public Entities8()
+            : base("name=Entities8")
         {
         }
-        private static Entities7 _context;
-        public static Entities7 GetContext()
+        private static Entities8 _context;
+        public static Entities8 GetContext()
         {
             if (_context == null)
-            {
-                _context = new Entities7();
-            }
+                _context = new Entities8();
             return _context;
         }
 

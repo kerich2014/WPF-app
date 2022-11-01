@@ -15,7 +15,7 @@
             </Label.Background>
         </Label>
         <TextBox x:Name="text_capctha" HorizontalAlignment="Left" FontSize="20" Margin="32,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" FontFamily="Segoe Print" Height="32" BorderBrush="Black"/>
-        <Button x:Name="button_generate" HorizontalAlignment="Left" Margin="211,22,0,0" VerticalAlignment="Top" Width="41" Height="32" RenderTransformOrigin="5.667,-1.2" Click="button_generate_Click" BorderBrush="Black" Background="#FF656565" Foreground="Black">
+        <Button x:Name="button_generate" HorizontalAlignment="Left" Margin="211,22,0,0" VerticalAlignment="Top" Width="41" Height="32" RenderTransformOrigin="5.667,-1.2" Click="button_generate_Click" BorderBrush="Black" Background="#FF705D9C" Foreground="#CCCCFF">
             <Image Source="/Resources/icon_refr4.png"></Image>
         </Button>
 

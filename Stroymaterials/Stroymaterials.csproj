@@ -93,51 +93,51 @@
     <Compile Include="AppData\AppConnect.cs" />
     <Compile Include="AppData\AppFrame.cs" />
     <Compile Include="AppData\Category.cs">
-      <DependentUpon>Model7.tt</DependentUpon>
+      <DependentUpon>Model8.tt</DependentUpon>
     </Compile>
     <Compile Include="AppData\Check.cs">
-      <DependentUpon>Model7.tt</DependentUpon>
+      <DependentUpon>Model8.tt</DependentUpon>
     </Compile>
     <Compile Include="AppData\Flag.cs" />
     <Compile Include="AppData\Forphoto\Materials.cs" />
     <Compile Include="AppData\Maker.cs">
-      <DependentUpon>Model7.tt</DependentUpon>
+      <DependentUpon>Model8.tt</DependentUpon>
     </Compile>
-    <Compile Include="AppData\Model7.Context.cs">
+    <Compile Include="AppData\Model8.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model7.Context.tt</DependentUpon>
+      <DependentUpon>Model8.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="AppData\Model7.cs">
+    <Compile Include="AppData\Model8.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model7.tt</DependentUpon>
+      <DependentUpon>Model8.tt</DependentUpon>
     </Compile>
-    <Compile Include="AppData\Model7.Designer.cs">
+    <Compile Include="AppData\Model8.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model7.edmx</DependentUpon>
+      <DependentUpon>Model8.edmx</DependentUpon>
     </Compile>
     <Compile Include="AppData\Order.cs">
-      <DependentUpon>Model7.tt</DependentUpon>
+      <DependentUpon>Model8.tt</DependentUpon>
     </Compile>
     <Compile Include="AppData\Pointup.cs">
-      <DependentUpon>Model7.tt</DependentUpon>
+      <DependentUpon>Model8.tt</DependentUpon>
     </Compile>
     <Compile Include="AppData\Provider.cs">
-      <DependentUpon>Model7.tt</DependentUpon>
+      <DependentUpon>Model8.tt</DependentUpon>
     </Compile>
     <Compile Include="AppData\Role.cs">
-      <DependentUpon>Model7.tt</DependentUpon>
+      <DependentUpon>Model8.tt</DependentUpon>
     </Compile>
     <Compile Include="AppData\Spare.cs">
-      <DependentUpon>Model7.tt</DependentUpon>
+      <DependentUpon>Model8.tt</DependentUpon>
     </Compile>
     <Compile Include="AppData\sysdiagrams.cs">
-      <DependentUpon>Model7.tt</DependentUpon>
+      <DependentUpon>Model8.tt</DependentUpon>
     </Compile>
     <Compile Include="AppData\User.cs">
-      <DependentUpon>Model7.tt</DependentUpon>
+      <DependentUpon>Model8.tt</DependentUpon>
     </Compile>
     <Compile Include="CaptchaNamespace\Captcha.cs" />
     <Compile Include="MainWindow.xaml.cs">
@@ -233,12 +233,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="AppData\Model7.edmx">
+    <EntityDeploy Include="AppData\Model8.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model7.Designer.cs</LastGenOutput>
+      <LastGenOutput>Model8.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="AppData\Model7.edmx.diagram">
-      <DependentUpon>Model7.edmx</DependentUpon>
+    <None Include="AppData\Model8.edmx.diagram">
+      <DependentUpon>Model8.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -277,16 +277,18 @@
     <Resource Include="Resources\logo1.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AppData\Model7.Context.tt">
+    <Content Include="AppData\Model8.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model7.edmx</DependentUpon>
-      <LastGenOutput>Model7.Context.cs</LastGenOutput>
+      <DependentUpon>Model8.edmx</DependentUpon>
+      <LastGenOutput>Model8.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="AppData\Model7.tt">
+    <Content Include="AppData\Model8.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model7.edmx</DependentUpon>
-      <LastGenOutput>Model7.cs</LastGenOutput>
+      <DependentUpon>Model8.edmx</DependentUpon>
+      <LastGenOutput>Model8.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resources\wpf_mainlogo.png" />
+    <Resource Include="Resources\wpf_logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

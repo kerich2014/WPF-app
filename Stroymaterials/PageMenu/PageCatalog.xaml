@@ -8,7 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Каталог" Loaded="Page_Loaded">
 
-    <Grid x:Name="grid_catalog" Loaded="grid_catalog_Loaded" Background="#FFA0A0A0">
+    <Grid x:Name="grid_catalog" Loaded="grid_catalog_Loaded" Background="#FF77BDFF">
         <ListBox x:Name="listbox_catalog" HorizontalAlignment="Center" Height="280" Margin="0,65,0,0" VerticalAlignment="Top" Width="800" Background="{x:Null}" Foreground="Black">
             <ListBox.Style>
                 <Style TargetType="ListBox">
@@ -62,8 +62,8 @@
         </ComboBox>
         <ComboBox x:Name="combosort_price" HorizontalAlignment="Left" Margin="196,20,0,0" VerticalAlignment="Top" Width="130" Height="25" SelectionChanged="combosort_price_SelectionChanged" Foreground="Black" FontWeight="Bold" Background="White" BorderBrush="White"/>
         <TextBox x:Name="textbox_search" HorizontalAlignment="Left" Height="25" Margin="54,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="textbox_search_TextChanged" FontSize="15" BorderBrush="#FFABADB3" Background="{x:Null}" Foreground="#FF797777" FontWeight="Bold"/>
-        <Button x:Name="button_adminpanel" Content="Войти в админ панель" HorizontalAlignment="Left" Margin="623,20,0,0" VerticalAlignment="Top" Height="25" Width="150" Click="button_adminpanel_Click" BorderBrush="Black" Background="#FF656565" Foreground="Black" FontWeight="Bold"/>
-        <Button x:Name="button_exit" Content="Выйти" HorizontalAlignment="Left" Margin="502,20,0,0" VerticalAlignment="Top" Height="25" Width="100" Click="button_exit_Click" BorderBrush="Black" Background="#FF656565" Foreground="Black" FontWeight="Bold"/>
+        <Button x:Name="button_adminpanel" Content="Войти в админ панель" HorizontalAlignment="Left" Margin="623,20,0,0" VerticalAlignment="Top" Height="25" Width="150" Click="button_adminpanel_Click" BorderBrush="Black" Background="#FF705D9C" Foreground="Black" FontWeight="Bold"/>
+        <Button x:Name="button_exit" Content="Выйти" HorizontalAlignment="Left" Margin="502,20,0,0" VerticalAlignment="Top" Height="25" Width="100" Click="button_exit_Click" BorderBrush="Black" Background="#FF705D9C" Foreground="Black" FontWeight="Bold"/>
         <Label Content="Поиск" HorizontalAlignment="Left" Margin="7,19,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.474,-0.343" FontWeight="Bold" Foreground="Black"/>
         <TextBlock x:Name="label_material_list"  HorizontalAlignment="Left" Margin="10,350,0,0" VerticalAlignment="Top" Foreground="Black" Background="{x:Null}" Width="250" Height="40" FontSize="20"/>
 

@@ -193,13 +193,13 @@ namespace Stroymaterials.PageAdmin
                 DataContext = null;
                 DataContext = _materials;
             }
-            Entities7.GetContext().Spare.Add(newMaterial);
-            Entities7.GetContext().SaveChanges();
+            Entities8.GetContext().Spare.Add(newMaterial);
+            Entities8.GetContext().SaveChanges();
         }
 
         private void updateMaterials()
         {
-            Spare updatedMaterial = Entities7.GetContext().Spare.Where(x => x.id_spare == updateMaterial.id_spare).SingleOrDefault();
+            Spare updatedMaterial = Entities8.GetContext().Spare.Where(x => x.id_spare == updateMaterial.id_spare).SingleOrDefault();
             updatedMaterial.spare_name = updateMaterial.spare_name;
             updatedMaterial.spare_count = updateMaterial.spare_count;
             updatedMaterial.spare_price = updateMaterial.spare_price;

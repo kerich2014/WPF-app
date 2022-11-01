@@ -8,9 +8,9 @@
       d:DesignHeight="80" d:DesignWidth="250"
       Title="PageName">
 
-    <Grid Background="#FFA0A0A0">
-        <Label x:Name="label_info" Content="Вы вошли как:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Foreground="Black" Width="180" Height="33" FontSize="20" FontWeight="Normal"/>
-        <Label x:Name="text_info" Content="" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top" Foreground="Black" Width="180" Height="40" FontSize="20" FontWeight="Bold"/>
+    <Grid Background="#FF00FFE2">
+        <Label x:Name="label_info" Content="Вы вошли как:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Foreground="#CCCCFF" Width="180" Height="33" FontSize="20" FontWeight="Normal"/>
+        <Label x:Name="text_info" Content="" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top" Foreground="#CCCCFF" Width="180" Height="40" FontSize="20" FontWeight="Bold"/>
 
     </Grid>
 </Page>

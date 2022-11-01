@@ -8,9 +8,9 @@
       d:DesignHeight="500" d:DesignWidth="800"
       Title="Панель администратора" Background="Black">
 
-    <Grid x:Name="grid_page_menu_admin" Background="#FFA0A0A0">
+    <Grid x:Name="grid_page_menu_admin" Background="#FF77BDFF">
         <StackPanel HorizontalAlignment="Left" Height="450" VerticalAlignment="Top" Width="160"/>
-        <Frame x:Name="frame_sec" Content="Frame" HorizontalAlignment="Left" Height="480" Margin="0,10,0,0" VerticalAlignment="Top" Width="800" FontSize="25" BorderBrush="Black" Background="#FFA0A0A0"/>
+        <Frame x:Name="frame_sec" Content="Frame" HorizontalAlignment="Left" Height="480" Margin="0,10,0,0" VerticalAlignment="Top" Width="800" FontSize="25" BorderBrush="Black" Background="#FF77BDFF"/>
 
     </Grid>
 </Page>

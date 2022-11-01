@@ -30,7 +30,7 @@ namespace Stroymaterials.PageAdmin
         public Page_Users()
         {
             InitializeComponent();
-            listview_users.ItemsSource = Entities7.GetContext().User.ToList();
+            listview_users.ItemsSource = Entities8.GetContext().User.ToList();
         }
 
         private void button_add_Click(object sender, RoutedEventArgs e)
@@ -51,11 +51,11 @@ namespace Stroymaterials.PageAdmin
                     try
                     {
                         var userObj = listview_users.SelectedItems.Cast<User>().ToList();
-                        Entities7.GetContext().User.RemoveRange(userObj);
-                        Entities7.GetContext().SaveChanges();
+                        Entities8.GetContext().User.RemoveRange(userObj);
+                        Entities8.GetContext().SaveChanges();
                         MessageBox.Show("Пользователь успешно удалён!");
 
-                        listview_users.ItemsSource = Entities7.GetContext().User.ToList();
+                        listview_users.ItemsSource = Entities8.GetContext().User.ToList();
                     }
                     catch (Exception ex)
                     {

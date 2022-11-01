@@ -9,14 +9,19 @@
         Icon="pack://application:,,,/Resources/logo.png"
         Title="АвтоМастер" Height="600" Width="800">
 
-    <Grid x:Name="grid_main" Background="#FFA0A0A0">
+    <Grid x:Name="grid_main" Background="#FF00FFE2">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="17*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="135*"/>
             <RowDefinition Height="465*"/>
         </Grid.RowDefinitions>
-        <Frame x:Name="main_frame" Content="" HorizontalAlignment="Center" Height="465" VerticalAlignment="Top" Width="800" NavigationUIVisibility="Hidden" Margin="0,119,0,0" Grid.RowSpan="2" Background="#FFA0A0A0"/>
-        <Image HorizontalAlignment="Left" Source="/Resources/logo1.png" Height="121" VerticalAlignment="Top" Width="473"/>
-        <Frame x:Name="frame_name" Content="" Margin="450,25,20,20"  Width="250" Height="80" Foreground="{x:Null}"/>
+        <Frame x:Name="main_frame" Content="" HorizontalAlignment="Left" Height="465" VerticalAlignment="Top" Width="800" NavigationUIVisibility="Hidden" Margin="0,119,0,0" Grid.RowSpan="2" Background="#FF77BDFF" Grid.ColumnSpan="2"/>
+        <Image HorizontalAlignment="Left" Source="/Resources/wpf_mainlogo.png" Height="104" VerticalAlignment="Top" Width="115" Margin="10,10,0,0"/>
+        <Frame x:Name="frame_name" Content="" Margin="490,28,60,23"  Width="250" Height="80" Foreground="{x:Null}" Grid.ColumnSpan="2" Background="#FF00FFE2" NavigationUIVisibility="Automatic"/>
+        <Label Content="CarX Repair" HorizontalAlignment="Left" Margin="146,0,0,0" VerticalAlignment="Center" FontSize="48" FontFamily="Arial Black" FontWeight="Bold" Background="{x:Null}" Foreground="#FF785DFD"/>
     </Grid>
 
 </Window>

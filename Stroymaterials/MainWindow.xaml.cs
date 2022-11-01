@@ -26,7 +26,7 @@ namespace Stroymaterials
         {
             Flag.flag = "";
             InitializeComponent();
-            AppConnect.model0db = new Entities7();
+            AppConnect.model0db = new Entities8();
             AppFrame.frmmain = main_frame;
             AppFrame.frmsec = frame_name;
             frame_name.NavigationUIVisibility = NavigationUIVisibility.Hidden;

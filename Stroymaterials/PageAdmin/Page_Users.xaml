@@ -65,7 +65,7 @@
         </Style>
     </Page.Resources>
 
-    <Grid x:Name="grid_page_users" Width="640" Height="400" Background="#FFA0A0A0" >
+    <Grid x:Name="grid_page_users" Width="640" Height="400" Background="#FF77BDFF" >
         <ListView x:Name="listview_users" HorizontalAlignment="Center" Height="220" VerticalAlignment="Top" Width="640" Background="{x:Null}" Foreground="#FF464646" Margin="0,40,0,0" BorderBrush="Black">
             <ListView.View>
                 <GridView x:Name="gr" >
@@ -85,14 +85,14 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button x:Name="button_add" Content="Добавить" HorizontalAlignment="Left" Height="40" Margin="210,270,0,0" VerticalAlignment="Top" Width="120" FontSize="20" Click="button_add_Click" BorderBrush="Black" Background="#FF656565" Foreground="Black"/>
-        <Button  x:Name="button_edit" Content="Изменить" HorizontalAlignment="Left" Height="40" Margin="350,270,0,0" VerticalAlignment="Top" Width="120" FontSize="20" Click="button_edit_Click" BorderBrush="Black" Background="#FF656565" Foreground="Black"/>
-        <Button  x:Name="button_del" Content="Удалить" HorizontalAlignment="Left" Height="40" Margin="490,270,0,0" VerticalAlignment="Top" Width="120" FontSize="20" Click="button_del_Click" BorderBrush="Black" Background="#FF656565" Foreground="Black"/>
-        <Button  x:Name="button_materials" Content="Запчасти" HorizontalAlignment="Left" Margin="210,327,0,0" VerticalAlignment="Top" Width="120" Height="40" FontSize="20" Click="button_materials_Click" BorderBrush="Black" Background="#FF656565" Foreground="Black"/>
-        <Button  x:Name="button_exit" Content="Выход" HorizontalAlignment="Left" Margin="10,270,0,0" VerticalAlignment="Top" Width="120" Height="40" FontSize="20" Click="button_exit_Click" BorderBrush="Black" Background="#FF656565" Foreground="Black"/>
+        <Button x:Name="button_add" Content="Добавить" HorizontalAlignment="Left" Height="40" Margin="210,270,0,0" VerticalAlignment="Top" Width="120" FontSize="20" Click="button_add_Click" BorderBrush="Black" Background="#FF705D9C" Foreground="#CCCCFF"/>
+        <Button  x:Name="button_edit" Content="Изменить" HorizontalAlignment="Left" Height="40" Margin="350,270,0,0" VerticalAlignment="Top" Width="120" FontSize="20" Click="button_edit_Click" BorderBrush="Black" Background="#FF705D9C" Foreground="#CCCCFF"/>
+        <Button  x:Name="button_del" Content="Удалить" HorizontalAlignment="Left" Height="40" Margin="490,270,0,0" VerticalAlignment="Top" Width="120" FontSize="20" Click="button_del_Click" BorderBrush="Black" Background="#FF705D9C" Foreground="#CCCCFF"/>
+        <Button  x:Name="button_materials" Content="Запчасти" HorizontalAlignment="Left" Margin="210,327,0,0" VerticalAlignment="Top" Width="120" Height="40" FontSize="20" Click="button_materials_Click" BorderBrush="Black" Background="#FF705D9C" Foreground="#CCCCFF"/>
+        <Button  x:Name="button_exit" Content="Выход" HorizontalAlignment="Left" Margin="10,270,0,0" VerticalAlignment="Top" Width="120" Height="40" FontSize="20" Click="button_exit_Click" BorderBrush="Black" Background="#FF705D9C" Foreground="#CCCCFF"/>
         <TextBox x:Name="textbox_search" HorizontalAlignment="Left" Height="25" Margin="200,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="15" BorderBrush="Black" Background="{x:Null}" Foreground="#FF3E3E3E" FontWeight="Bold" SelectionChanged="textbox_search_SelectionChanged"/>
-        <Label x:Name="label_search" Content="Поиск по фамилии" HorizontalAlignment="Left" Margin="0,-2,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.474,-0.343" FontWeight="Normal" Foreground="Black" FontSize="20"/>
-        <Button  x:Name="button_return" Content="Вернуться в каталог" HorizontalAlignment="Left" Margin="350,327,0,0" VerticalAlignment="Top" Width="260" Height="40" FontSize="20" BorderBrush="Black" Background="#FF656565" Foreground="Black" Click="button_return_Click"/>
+        <Label x:Name="label_search" Content="Поиск по фамилии" HorizontalAlignment="Left" Margin="0,-2,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.474,-0.343" FontWeight="Normal" Foreground="#CCCCFF" FontSize="20"/>
+        <Button  x:Name="button_return" Content="Вернуться в каталог" HorizontalAlignment="Left" Margin="350,327,0,0" VerticalAlignment="Top" Width="260" Height="40" FontSize="20" BorderBrush="Black" Background="#FF705D9C" Foreground="#CCCCFF" Click="button_return_Click"/>
 
 
     </Grid>

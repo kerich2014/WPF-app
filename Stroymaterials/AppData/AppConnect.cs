@@ -8,6 +8,6 @@ namespace Stroymaterials.AppData
 {
     class AppConnect
     {
-        public static Entities7 model0db;
+        public static Entities8 model0db;
     }
 }
